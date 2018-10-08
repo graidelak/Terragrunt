@@ -21,6 +21,10 @@ variable "instance_type" {
 description = "the type of the EC2 instances to run"
 }
 
+variable "name" {
+  description = "The name for the ASG. This name is also used to namespace all the other resources created by this module."
+}
+
 variable "ssh_port" {
  description = "ssh port number for remote connections"
 }

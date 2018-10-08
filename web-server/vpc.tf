@@ -74,7 +74,7 @@ resource "aws_security_group_rule" "web_allow_all_outbound" {
   to_port		= 0
   protocol		= "-1"
   cidr_blocks		= ["0.0.0.0/0"]
-  security_group_id	= "${aws_security_group.web.id}"
+  security_group_id	= "${aws_security_group.websg.id}"
 
 }  
 resource "aws_security_group_rule" "web_allow_ssh_inbound" {
@@ -83,7 +83,7 @@ resource "aws_security_group_rule" "web_allow_ssh_inbound" {
   to_port               = "${var.ssh_port}"
   protocol              = "tpc"
   cidr_blocks           = ["0.0.0.0/0"]
-  security_group_id     = "${aws_security_group.web.id}"
+  security_group_id     = "${aws_security_group.websg.id}"
   }
 
 resource "aws_security_group_rule" "web_allow_http_inbound" {
@@ -92,7 +92,7 @@ resource "aws_security_group_rule" "web_allow_http_inbound" {
   to_port               = "${var.http_port}"
   protocol              = "tpc"
   cidr_blocks           = ["0.0.0.0/0"]
-  security_group_id     = "${aws_security_group.web.id}"
+  security_group_id     = "${aws_security_group.websg.id}"
 }
 
 
