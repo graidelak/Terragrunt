@@ -26,7 +26,7 @@ resource "aws_instance" "webserver" {
 
 # security group
 resource "aws_security_group" "websg" {
-  name = "${var.name}-web"
+  name = "webserver"
 }
 
 resource "aws_security_group_rule" "web_allow_all_outbound" {
