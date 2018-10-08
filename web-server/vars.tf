@@ -2,21 +2,6 @@ variable "aws_region" {
 description = "AWS region to deploy to"
 }
 
-variable "vpc_cidr" {
-description = "CIDR"
-default = "10.0.0.0/16"
-}
-
-variable "public_subnet_cidr" {
-description = "public_subnet"
-default = "10.0.1.0/24"
-}
-
-variable "private_subnet_cidr" {
-description = "private_subnet"
-default = "10.0.2.0/24"
-}
-
 variable "instance_type" {
 description = "the type of the EC2 instances to run"
 }

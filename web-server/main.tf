@@ -10,7 +10,7 @@ resource "aws_instance" "webserver" {
    ami = "${var.ami}"
    instance_type = "${var.instance_type}"
    key_name = "${var.key_name}"
-   security_groups = ["${aws_security_group.websg.id}"]
+   vpc_security_group_ids = ["${aws_security_group.websg.id}"]
    associate_public_ip_address = true
 
    user_data = <<-EOF
