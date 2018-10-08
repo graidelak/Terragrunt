@@ -1,5 +1,5 @@
 variable "aws_region" {
-description = "Region for the VPC"
+description = "AWS region to deploy to"
 }
 
 variable "vpc_cidr" {
