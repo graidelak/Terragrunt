@@ -27,7 +27,7 @@ variable "ssh_port" {
 
 variable "http_port" {
 description = "The port number the webserver should listen on for HTTP requests"
-
+}
 
 variable "ami" {
 description = "Ubuntu xenial 16.04"
