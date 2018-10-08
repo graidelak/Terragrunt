@@ -1,6 +1,6 @@
 # security group
 resource "aws_security_group" "websg" {
-  name = "${var.name}-web}"
+  name = "${var.name}-web"
 }
 
 resource "aws_security_group_rule" "web_allow_all_outbound" {
