@@ -3,5 +3,5 @@ output "url" {
 }
 
 output "webserver_dns_name"{
-  value = "${aws_instances.webserver.dns_name}"
+  value = "${aws_instance.webserver.dns_name}"
 }
