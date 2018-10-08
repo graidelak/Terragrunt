@@ -1,5 +1,5 @@
 resource "aws_security_group" "websg" {
-  name = "webserversg"
+  name = "websg"
 
   egress {
   from_port = 0
