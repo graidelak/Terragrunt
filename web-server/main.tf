@@ -10,7 +10,6 @@ resource "aws_instance" "webserver" {
    ami = "${var.ami}"
    instance_type = "${var.instance_type}"
    key_name = "${var.key_name}"
-   subnet_id = "${aws_subnet.public-subnet.id}"
    security_groups = ["${aws_security_group.websg.id}"]
    associate_public_ip_address = true
 
