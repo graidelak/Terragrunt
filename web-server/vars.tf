@@ -1,6 +1,5 @@
 variable "aws_region" {
 description = "Region for the VPC"
-default = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -23,12 +22,11 @@ description = "Ubuntu xenial 16.04"
 default = "ami-759bc50a"
 }
 
-
-variable "aws_access_key" {
-  default = "AKIAJ2KCALARJ27YK3JA"
-  description = "the user aws access key"
+variable "instance_type" {
+  description = "The type of EC2 Instnaces to run in the ASG (e.g. t2.micro)"
 }
-variable "aws_secret_key" {
-  default = "rLDgAxRRO9utZ50ZZB1NRz6pDUvkYAYyu/74I5Eu"
-  description = "the user aws secret key"
+
+variable "key_name" {
+  description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster"
+  default     = "flugel"
 }
