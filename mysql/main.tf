@@ -17,8 +17,6 @@ resource "aws_db_instance" "mysql" {
   instance_class    = "${var.instance_class}"
   allocated_storage = "${var.allocated_storage}"
   storage_type      = "${var.storage_type}"
-  db_subnet_group_name      = "${aws_db_subnet_group.rds.id}"
-  vpc_security_group_ids    = ["${aws_security_group.rds.id}"]
   
   skip_final_snapshot = true
 }
