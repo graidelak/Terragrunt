@@ -2,6 +2,10 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
+terraform {
+  backend "s3" {}
+}
+
 #resource "aws_key_pair" "default" {
 #  key_name = "terrakeypar"
 #  public_key = "${var.public_key}"
