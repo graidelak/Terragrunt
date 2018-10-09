@@ -20,6 +20,14 @@ resource "aws_instance" "webserver" {
    associate_public_ip_address = true
    source_dest_check = false
 
+   user_data = <<-EOF
+              #!/bin/bash
+              echo "Hello, World" > index.html
+              nohup busybox httpd -f -p "${var.server_port}" &
+              EOF
+
+
+
   tags {
     Name = "webserver"
   }
