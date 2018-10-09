@@ -1,25 +1,30 @@
 provider "aws" {
- region = "${var.aws_region}"
+  access_key = "${var.aws_access_key}"
+  secret_key = "${var.aws_secret_key}"
+  region = "${var.aws_region}"
 }
 
-terraform {
-  backend "s3" {}
-}
+#resource "aws_key_pair" "default" {
+#  key_name = "terrakeypar"
+#  public_key = "${var.public_key}"
+#}
 
-resource "aws_instance" "webserver" {
-   ami = "${var.ami}"
-   instance_type = "${var.instance_type}"
-   key_name = "${var.key_name}"
-   vpc_security_group_ids = ["${aws_security_group.websg.id}"]
+resource "aws_instance" "terraform-aws" {
+   ami  = "${var.ami}"
+   instance_type = "t2.micro"
+   key_name = "langroo"
+   subnet_id = "${aws_subnet.public-subnet.id}"
+   vpc_security_group_ids = ["${aws_security_group.terraform.id}"]
    associate_public_ip_address = true
+   source_dest_check = false
 
-   user_data = <<-EOF
-              #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p "${var.http_port}" &
-              EOF
+  tags {
+    Name = "terraform-aws"
+  }
+}
 
-   tags {
-      Name = "webserver"
-   }
+output "ip" {
+
+value="${aws_instance.terraform-aws.public_ip}"
+
 }
