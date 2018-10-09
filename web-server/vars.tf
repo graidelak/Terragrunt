@@ -30,3 +30,11 @@ variable "key_name" {
   description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster"
   default     = "flugel"
 }
+
+variable "ssh_port" {
+  description = "The port number the web server on each EC2 Instance should listen on for SSH requests"
+}
+
+variable "http_port" {
+  description = "The port number the web server on each EC2 Instance should listen on for HTTP requests"
+}
